@@ -45,4 +45,4 @@ jobs:
         run: curl --fail http://localhost:8000 || exit 1
 
       - name: Stop container
-        run: docker stop fastapi_test
+        run: docker stop secure-ml-api
