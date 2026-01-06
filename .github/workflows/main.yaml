@@ -33,16 +33,16 @@ jobs:
 
     #   # ---------------- Docker Section ----------------
 
-    #   - name: Build Docker image
-    #     run: docker build -t mlops-fastapi:latest .
+      - name: Build Docker image
+        run: docker build -t secure-ml-api:latest .
 
-    #   - name: Run Docker container
-    #     run: |
-    #       docker run -d -p 8000:8000 --name fastapi_test mlops-fastapi:latest
-    #       sleep 10
+      - name: Run Docker container
+        run: |
+          docker run -d -p 8000:8000 secure-ml-api:latest
+          sleep 10
 
-    #   - name: Check FastAPI health
-    #     run: curl --fail http://localhost:8000 || exit 1
+      - name: Check FastAPI health
+        run: curl --fail http://localhost:8000 || exit 1
 
-    #   - name: Stop container
-    #     run: docker stop fastapi_test
+      - name: Stop container
+        run: docker stop fastapi_test
