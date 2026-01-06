@@ -36,6 +36,6 @@ def login():
 # Prediction endpoint, requires a valid JWT token for authentication
 # Additionally, the input data is validated using the PredictionInput model
 @app.post("/predict")
-def predict(input_data: PredictionInput, token: str = Depends(verify_token)):
+def predict(input_data: PredictionInput, _token: str = Depends(verify_token)):
     prediction = make_prediction(input_data.data)
     return {"prediction": prediction}
