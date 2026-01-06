@@ -9,3 +9,7 @@ pydantic
 fastapi
 uvicorn
 starlette
+
+pylint
+black
+pytest
